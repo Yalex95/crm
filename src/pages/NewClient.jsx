@@ -4,10 +4,18 @@ import Error from '../components/Error'
 export async function action({request}){
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
+
+  const email = formData.get('email')
+
   // validation
   const errors = []
   if(Object.values(data).includes('')){
     errors.push('All fields are required')
+  }
+  //regex for email validation
+  let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+  if(!regex.test(email)){
+    errors.push('The email is not valid')
   }
 
   if(errors.length > 0){
@@ -19,7 +27,7 @@ export async function action({request}){
 function NewClient() {
   const navigate = useNavigate()
   const errors = useActionData()
-  
+
   return (
     <>
       <h1 className='font-black text-4xl text-blue-900'>New Client</h1>
@@ -39,6 +47,7 @@ function NewClient() {
         ))}
         <Form 
         method='post'
+        noValidate
         >
           <CrmForm/>
           <input 

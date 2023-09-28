@@ -9,4 +9,5 @@ npx tailwind init -p
 - React routing DOM
 npm install react-router-dom
 
-createBrowserRouter, RouterProvider, Outlet
+createBrowserRouter, RouterProvider, Outlet, Link
+Loader, useLoaderData hook

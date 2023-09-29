@@ -1,46 +1,11 @@
 import { useLoaderData } from "react-router-dom"
 import Client from "../components/Client";
+import { getClients } from "../data/clients";
 
 
 export function loader(){
   // function similar as a use effect
-  const clients = [
-    {
-        id: 1,
-        name: 'Juan',
-        phone: 102013313,
-        email: "juan@gmail.com",
-        company: 'Example Company'
-    },
-    {
-        id: 2,
-        name: 'Karen',
-        phone: 138198313,
-        email: "karen@gmail.com",
-        company: 'Example Company'
-    },
-    {
-        id: 3,
-        name: 'Josue',
-        phone: 31983913,
-        email: "josue@gmail.com",
-        company: 'Example Company'
-    },
-    {
-        id: 4,
-        name: 'Miguel',
-        phone: 319381983,
-        email: "miguel@gmail.com",
-        company: 'Example Company'
-    },
-    {
-        id: 5,
-        name: 'Pedro',
-        phone: 1398198938,
-        email: "pedro@gmail.com",
-        company: 'Example Company'
-    },
-];
+ const clients = getClients()
 
   return clients //it has to return something
 }

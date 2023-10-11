@@ -12,7 +12,8 @@ export function loader(){
 
 function Index (){
   const clients = useLoaderData()
-
+  // error boundaries
+  //components of react that obtains erros anywher
   return (
     <>
       <h1 className='font-black text-4xl text-blue-900'>Clients</h1>

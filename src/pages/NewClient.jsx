@@ -1,6 +1,8 @@
-import { Form,useActionData,useNavigate} from 'react-router-dom'
+import { Form,useActionData,useNavigate, redirect} from 'react-router-dom'
 import CrmForm from '../components/Form'
 import Error from '../components/Error'
+import {addClient} from '../data/clients'
+
 export async function action({request}){
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
@@ -21,6 +23,8 @@ export async function action({request}){
   if(errors.length > 0){
     return errors
   }
+  await addClient(data)
+  return redirect('/')
   
 }
 

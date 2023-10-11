@@ -5,3 +5,21 @@ export async function getClients(){
     return result
 
 }
+
+export async function addClient(data){
+    try {
+        const resp = await fetch(
+            import.meta.env.VITE_API_URL,
+            {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            await resp.json()
+
+    } catch (error) {
+        console.log(error)
+    }
+}

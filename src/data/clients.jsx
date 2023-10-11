@@ -1,3 +1,4 @@
+//get clients
 export async function getClients(){
     const  response = await fetch(import.meta.env.VITE_API_URL)
     const result = await response.json()
@@ -5,6 +6,7 @@ export async function getClients(){
     return result
 
 }
+//get client
 export async function getClient(id){
     const  response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`)
     const result = await response.json()
@@ -12,7 +14,7 @@ export async function getClient(id){
     return result
 
 }
-
+// create
 export async function addClient(data){
     try {
         const resp = await fetch(
@@ -30,6 +32,7 @@ export async function addClient(data){
         console.log(error)
     }
 }
+// update
 export async function updateClient(id,data){
     
     try {
@@ -41,6 +44,20 @@ export async function updateClient(id,data){
                 headers: {
                     'Content-Type': 'application/json'
                 }
+            })
+            await resp.json()
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+// remove client
+export async function removeClient(id){
+    try {
+        const resp = await fetch(
+            `${import.meta.env.VITE_API_URL}/${id}`,
+            {
+                method: 'DELETE'
             })
             await resp.json()
 

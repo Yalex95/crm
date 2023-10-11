@@ -1,13 +1,6 @@
 {
   "clients": [
     {
-      "id": 1,
-      "name": "Juan",
-      "phone": 102013313,
-      "email": "juan@gmail.com",
-      "company": "Example Company"
-    },
-    {
       "id": 2,
       "name": "Karen",
       "phone": 138198313,
@@ -36,29 +29,10 @@
       "company": "Example Company"
     },
     {
-      "id": 6
-    },
-    {
-      "Name": "Yeris Alejandra Aguilar Gordillo",
-      "company": "me",
-      "email": "yerisaguilarg@gmail.com",
-      "phone": "9631101028",
-      "notes": "aaa",
-      "id": 7
-    },
-    {
-      "Name": "Yeris Aguilar",
+      "name": "Yeris Aguilar",
       "company": "Company",
       "email": "yerisaguilarg@gmail.com",
-      "phone": "9631101028",
-      "notes": "3333",
-      "id": 8
-    },
-    {
-      "name": "Yeris Alejandra Aguilar Gordillo actualizado",
-      "company": "Company",
-      "email": "yerisaguilarg@gmail.com",
-      "phone": "9631101028",
+      "phone": "111111",
       "notes": "note",
       "id": 9
     }
